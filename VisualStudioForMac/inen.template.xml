@@ -1,0 +1,22 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>inen</Shortcut>
+      <_Description>If variable is not null</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="variableName" isIdentifier="true">
+        <Default>variableName</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[if ($variableName$ != null)
+{
+   $end$    
+}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>apb</Shortcut>
+      <_Description>Auto-implemented bool property</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="ClassName" isIdentifier="true">
+        <Default>ClassName</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[public bool $ClassName$ { get; set; }$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>cwl</Shortcut>
+      <_Description>Console.WriteLine</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="message" isIdentifier="true">
+        <Default>message</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[Console.WriteLine("$message$");$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

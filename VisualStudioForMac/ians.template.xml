@@ -1,0 +1,22 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>ians</Shortcut>
+      <_Description>If argument is empty string throw exception</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="argumentName" isIdentifier="true">
+        <Default>argumentName</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[if (String.IsNullOrEmpty($argumentName$) == true)
+{
+    throw new ArgumentNullException(nameof($argumentName$), "Argument cannot be null or empty.");
+}$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

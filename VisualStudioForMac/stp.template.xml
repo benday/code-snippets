@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>stp</Shortcut>
+      <_Description>String.Format with paste</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="C" isIdentifier="true">
+        <Default></Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[String.Format($C$, $end$)]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

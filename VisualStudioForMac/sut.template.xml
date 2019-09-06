@@ -1,0 +1,31 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>sut</Shortcut>
+      <_Description>SystemUnderTest property for unit tests</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="TheType" isIdentifier="true">
+        <Default>TheType</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[private $TheType$$end$ _SystemUnderTest;
+        public $TheType$ SystemUnderTest
+        {
+            get
+            {
+                if (_SystemUnderTest == null)
+                {
+                    _SystemUnderTest = new $TheType$();
+                }
+                
+                return _SystemUnderTest;
+            }
+        }]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

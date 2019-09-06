@@ -1,0 +1,27 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>aes</Shortcut>
+      <_Description>Assert AreEqual with string</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="expected" isIdentifier="true">
+        <Default>expected</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="actual" isIdentifier="true">
+        <Default>actual</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="errorMessage" isIdentifier="true">
+        <Default>errorMessage</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[Assert.AreEqual<string>($expected$, $actual$, "$errorMessage$");]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

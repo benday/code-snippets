@@ -1,0 +1,32 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>tsmunv</Shortcut>
+      <_Description>This is only used for test cases in the snippet converter tool</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="1" isIdentifier="true">
+        <Default></Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="2" isIdentifier="true">
+        <Default></Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="3" isIdentifier="true">
+        <Default></Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[else if ($1$$2$)
+{
+$2$
+$3$
+ $end$
+}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

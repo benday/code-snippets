@@ -1,0 +1,22 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>asdf</Shortcut>
+      <_Description>DebugSnippet</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="T" isIdentifier="true">
+        <Default></Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[TM_FILENAME: $T$
+TM_FILENAME_BASE: ${TM_FILENAME_BASE}
+TM_DIRECTORY: ${TM_DIRECTORY}
+TM_FILEPATH: ${TM_FILEPATH}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

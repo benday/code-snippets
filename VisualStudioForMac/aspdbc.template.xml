@@ -1,0 +1,16 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>aspdbc</Shortcut>
+      <_Description>Register DbContext for ASP.NET Core</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables></Variables>
+    <Code><![CDATA[// using Microsoft.EntityFrameworkCore;
+services.AddDbContext<{1:dbContextName}DbContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("default")));$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

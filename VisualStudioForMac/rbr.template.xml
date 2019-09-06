@@ -1,0 +1,14 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>rbr</Shortcut>
+      <_Description>ASP.NET controller return bad request</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables></Variables>
+    <Code><![CDATA[return new BadRequestResult();$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

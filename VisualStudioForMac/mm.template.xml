@@ -1,0 +1,26 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>mm</Shortcut>
+      <_Description>Method that returns a type of your choosing</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="MethodName" isIdentifier="true">
+        <Default>MethodName</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="void" isIdentifier="true">
+        <Default>void</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[public $void$ $MethodName$()
+{
+$end$
+}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

@@ -1,0 +1,26 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>fe</Shortcut>
+      <_Description>foreach statement</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="items" isIdentifier="true">
+        <Default>items</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="item" isIdentifier="true">
+        <Default>item</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[foreach (var $item$ in $items$)
+{
+$end$
+}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

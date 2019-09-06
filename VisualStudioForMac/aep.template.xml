@@ -1,0 +1,23 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>aep</Shortcut>
+      <_Description>Assert.AreEqual on two properties</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="datatype" isIdentifier="true">
+        <Default>datatype</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+      <Variable name="propertyName" isIdentifier="true">
+        <Default>propertyName</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[Assert.AreEqual<$datatype$>(expected.$propertyName$, actual.$propertyName$, "$propertyName$");$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>nsb</Shortcut>
+      <_Description>Declare a new instance of StringBuilder</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="builder" isIdentifier="true">
+        <Default>builder</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[var $builder$ = new StringBuilder();$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

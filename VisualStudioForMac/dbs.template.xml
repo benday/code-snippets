@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>dbs</Shortcut>
+      <_Description>Insert property for DbSet&lt;T&gt;</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="MappedClassName" isIdentifier="true">
+        <Default>MappedClassName</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[public DbSet<$MappedClassName$> $MappedClassName$s { get; set; }$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

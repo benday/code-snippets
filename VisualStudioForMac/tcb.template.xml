@@ -1,0 +1,26 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>tcb</Shortcut>
+      <_Description>Try catch block</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="1" isIdentifier="true">
+        <Default></Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[try
+{
+ $end$
+}
+catch (Exception ex)
+{
+  $1$
+}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

@@ -1,0 +1,21 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>uitrywin</Shortcut>
+      <_Description>User interface try catch</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables></Variables>
+    <Code><![CDATA[try
+{
+ $end$
+}
+catch (Exception ex)
+{
+  MessageBox.Show(ex.ToString());
+}]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

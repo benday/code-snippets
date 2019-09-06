@@ -1,0 +1,18 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>aaa</Shortcut>
+      <_Description>Insert comments for arrange act and assert</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables></Variables>
+    <Code><![CDATA[// arrange
+$end$
+// act
+
+// assert]]></Code>
+  </CodeTemplate>
+</CodeTemplates>

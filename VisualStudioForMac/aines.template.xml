@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>aines</Shortcut>
+      <_Description>Assert string is null or empty</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="actual" isIdentifier="true">
+        <Default>actual</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[Assert.IsTrue(String.IsNullOrEmpty($actual$), "${1:variableName} should be null or empty.");$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>
