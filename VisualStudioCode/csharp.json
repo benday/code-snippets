@@ -1,0 +1,1009 @@
+{
+  // Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and
+  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
+  // same ids are connected.
+  // Example:
+  // "Print to console": {
+  // 	"prefix": "log",
+  // 	"body": [
+  // 		"console.log('$1');",
+  // 		"$2"
+  // 	],
+  // 	"description": "Log output to console"
+  // }
+  "DebugSnippet": {
+    "prefix": "asdf",
+    "body": [
+      "TM_FILENAME: ${TM_FILENAME}",
+      "TM_FILENAME_BASE: ${TM_FILENAME_BASE}",
+      "TM_DIRECTORY: ${TM_DIRECTORY}",
+      "TM_FILEPATH: ${TM_FILEPATH}"
+    ],
+    "description": "DebugSnippet"
+  },
+  "dbc": {
+    "prefix": "dbc",
+    "body": [
+      "public class ${1:DbContextClassName}DbContext : DbContext",
+      "{",
+      " public ${1:DbContextDbContext}DbContext(DbContextOptions options) : base(options)",
+      " {",
+      " }",
+      "",
+      " $0 ",
+      "}"
+    ],
+    "description": "DbContext class"
+  },
+  "dbs": {
+    "prefix": "dbs",
+    "body": [
+      "public DbSet<${1:MappedClassName}> ${1:MappedClassName}s { get; set; }$0"
+    ],
+    "description": "Insert property for DbSet<T>"
+  },
+  "dbcf": {
+    "prefix": "dbcf",
+    "body": [
+      "$0public class ${1:DbContextClassName}DesignTimeDbContextFactory : ",
+      "  IDesignTimeDbContextFactory<${1:DbContextClassName}DbContext>",
+      "{",
+      "    public ${1:DbContextClassName}DbContext Create()",
+      "    {",
+      "        var environmentName = ",
+      "   Environment.GetEnvironmentVariable(",
+      "    \"ASPNETCORE_ENVIRONMENT\");",
+      "",
+      "        var basePath = AppContext.BaseDirectory;",
+      "",
+      "  return Create(basePath, environmentName);",
+      " }",
+      "",
+      "    public ${1:DbContextClassName}DbContext CreateDbContext(string[] args)",
+      "    {",
+      "        return Create(",
+      "            Directory.GetCurrentDirectory(),",
+      "            Environment.GetEnvironmentVariable(\"ASPNETCORE_ENVIRONMENT\"));",
+      "    }",
+      "",
+      "    private ${1:DbContextClassName}DbContext Create(string basePath, string environmentName)",
+      "    {",
+      "        var builder = new ConfigurationBuilder()",
+      "            .SetBasePath(basePath)",
+      "            .AddJsonFile(\"appsettings.json\")",
+      "            .AddJsonFile($\"appsettings.{environmentName}.json\", true)",
+      "            .AddEnvironmentVariables();",
+      "",
+      "        var config = builder.Build();",
+      "",
+      "        var connstr = config.GetConnectionString(\"default\");",
+      "",
+      "        if (String.IsNullOrWhiteSpace(connstr) == true)",
+      "        {",
+      "            throw new InvalidOperationException(",
+      "                \"Could not find a connection string named 'default'.\");",
+      "        }",
+      "        else",
+      "        {",
+      "            return Create(connstr);",
+      "        }",
+      "    }",
+      "",
+      " private ${1:DbContextClassName}DbContext Create(string connectionString)",
+      " {",
+      "  if (string.IsNullOrEmpty(connectionString))",
+      "      throw new ArgumentException(",
+      "         $\"{nameof(connectionString)} is null or empty.\",",
+      "         nameof(connectionString));",
+      "        ",
+      "     var optionsBuilder =",
+      "       new DbContextOptionsBuilder<${1:DbContextClassName}DbContext>();",
+      "",
+      "  Console.WriteLine(",
+      "   \"${1:DbContextClassName}DesignTimeDbContextFactory.Create(string): Connection string: {0}\",",
+      "   connectionString);",
+      "",
+      "  optionsBuilder.UseSqlServer(connectionString);",
+      "",
+      "  return new ${1:DbContextClassName}DbContext(optionsBuilder.Options);",
+      " }",
+      "}"
+    ],
+    "description": "Create DbContextFactory class"
+  },
+  "Adapt property": {
+    "prefix": "adp",
+    "body": [
+      "toValue.${1:propertyName} = fromValue.${1:propertyName};$0"
+    ],
+    "description": "Adapt property"
+  },
+  "Assert AreEqual with T": {
+    "prefix": "ae",
+    "body": [
+      "Assert.AreEqual<${1:datatype}>(${2:expected}, ${3:actual}, \"${4:errorMessage}\");"
+    ],
+    "description": "Assert AreEqual with T"
+  },
+  "Assert AreEqual with ints": {
+    "prefix": "aei",
+    "body": [
+      "Assert.AreEqual<int>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert AreEqual with ints"
+  },
+  "Assert AreEqual with strings": {
+    "prefix": "aes",
+    "body": [
+      "Assert.AreEqual<string>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert AreEqual with string"
+  },
+  "Assert.AreEqual to 0": {
+    "prefix": "ae0",
+    "body": [
+      "Assert.AreEqual<int>(0, ${1:actual}, \"${2:errorMessage}\");"
+    ],
+    "description": "Assert.AreEqual to 0"
+  },
+  "Assert.AreEqual to String.Empty": {
+    "prefix": "ase",
+    "body": [
+      "Assert.AreEqual<string>(String.Empty, ${1:actual}, \"${2:errorMessage} should be empty.\");"
+    ],
+    "description": "Assert.AreEqual to String.Empty"
+  },
+  "Assert.AreEqual on two properties": {
+    "prefix": "aep",
+    "body": [
+      "Assert.AreEqual<${1:datatype}>(expected.${2:propertyName}, actual.${2:propertyName}, \"${2:propertyName}\");$0"
+    ],
+    "description": "Assert.AreEqual on two properties"
+  },
+  "Assert.AreEqual on two boolean properties": {
+    "prefix": "aepb",
+    "body": [
+      "Assert.AreEqual<bool>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert.AreEqual on two boolean properties"
+  },
+  "Assert.AreEqual on two DateTime properties": {
+    "prefix": "aepd8",
+    "body": [
+      "Assert.AreEqual<DateTime>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert.AreEqual on two DateTime properties"
+  },
+  "Assert.AreEqual on two float properties": {
+    "prefix": "aepf",
+    "body": [
+      "Assert.AreEqual<float>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert.AreEqual on two float properties"
+  },
+  "Assert.AreEqual on two int properties": {
+    "prefix": "aepi",
+    "body": [
+      "Assert.AreEqual<int>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert.AreEqual on two int properties"
+  },
+  "Assert.AreEqual on two string properties": {
+    "prefix": "aeps",
+    "body": [
+      "Assert.AreEqual<string>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert.AreEqual on two string properties"
+  },
+  "Assert.IsFalse": {
+    "prefix": "af",
+    "body": [
+      "Assert.IsFalse(${1:variable}, \"${2:errorMessage}\");$0"
+    ],
+    "description": "Assert.IsFalse"
+  },
+  "Assert.Fail()": {
+    "prefix": "afa",
+    "body": [
+      "Assert.Fail(\"${1:errorMessage}\");$0"
+    ],
+    "description": "Assert.Fail()"
+  },
+  "Assert.Inconclusive()": {
+    "prefix": "ain",
+    "body": [
+      "Assert.Inconclusive();$0"
+    ],
+    "description": "Assert.Inconclusive()"
+  },
+  "Assert string is null or empty": {
+    "prefix": "aines",
+    "body": [
+      "Assert.IsTrue(String.IsNullOrEmpty(${1:actual}), \"${1:variableName} should be null or empty.\");$0"
+    ],
+    "description": "Assert string is null or empty"
+  },
+  "Assert is null": {
+    "prefix": "an",
+    "body": [
+      "Assert.IsNull(${1:variable}, \"${2:errorMessage}\")$0"
+    ],
+    "description": "Assert is null"
+  },
+  "Assert is not equal with choice of T": {
+    "prefix": "ane",
+    "body": [
+      "Assert.AreNotEqual<${1:datatype}>(${2:expected}, ${3:actual}, \"${4:errorMessage}\");"
+    ],
+    "description": "Assert is not equal with choice of T"
+  },
+  "Assert is not equal to zero": {
+    "prefix": "ane0",
+    "body": [
+      "Assert.AreNotEqual<int>(0, ${1:actual}, \"${2:errorMessage}\");"
+    ],
+    "description": "Assert is not equal to zero"
+  },
+  "Assert floats are not equal": {
+    "prefix": "anef",
+    "body": [
+      "Assert.AreNotEqual<float>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert floats are not equal"
+  },
+  "Assert ints are not equal": {
+    "prefix": "anei",
+    "body": [
+      "Assert.AreNotEqual<int>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert ints are not equal"
+  },
+  "Assert strings are not equal": {
+    "prefix": "anes",
+    "body": [
+      "Assert.AreNotEqual<string>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert strings are not equal"
+  },
+  "Assert string is not empty string": {
+    "prefix": "anese",
+    "body": [
+      "Assert.AreNotEqual<string>(String.Empty, ${1:actual}, \"${2:errorMessage} should not be empty.\");"
+    ],
+    "description": "Assert string is not empty string"
+  },
+  "Assert bool properties are not equal": {
+    "prefix": "anepb",
+    "body": [
+      "Assert.AreNotEqual<bool>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert bool properties are not equal"
+  },
+  "Assert int properties are not equal": {
+    "prefix": "anepi",
+    "body": [
+      "Assert.AreNotEqual<int>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert int properties are not equal"
+  },
+  "Assert string properties are not equal": {
+    "prefix": "aneps",
+    "body": [
+      "Assert.AreNotEqual<string>(expected.${1:propertyName}, actual.${1:propertyName}, \"${1:propertyName}\");$0"
+    ],
+    "description": "Assert string properties are not equal"
+  },
+  "Assert is not null": {
+    "prefix": "ann",
+    "body": [
+      "Assert.IsNotNull(${1:variable}, \"${2:errorMessage}\");$0"
+    ],
+    "description": "Assert is not null"
+  },
+  "Assert is not null or empty string": {
+    "prefix": "anns",
+    "body": [
+      "Assert.IsFalse(String.IsNullOrEmpty(${1:actual}), \"${2:Variable name} was null or empty.\");"
+    ],
+    "description": "Assert is not null or empty string"
+  },
+  "Assert is null or empty string": {
+    "prefix": "ans",
+    "body": [
+      "Assert.IsTrue(String.IsNullOrEmpty(${1:actual}), \"${2:Variable name} should be null or empty.\");"
+    ],
+    "description": "Assert is null or empty string"
+  },
+  "Assert is true": {
+    "prefix": "at",
+    "body": [
+      "Assert.IsTrue($0);"
+    ],
+    "description": "Assert is true"
+  },
+  "Console.WriteLine": {
+    "prefix": "cwl",
+    "body": [
+      "Console.WriteLine(\"${1:message}\");$0"
+    ],
+    "description": "Console.WriteLine"
+  },
+  "Equals null": {
+    "prefix": "en",
+    "body": [
+      "== null"
+    ],
+    "description": "Equals null"
+  },
+  "Equals empty string": {
+    "prefix": "ese",
+    "body": [
+      "== String.Empty"
+    ],
+    "description": "Equals empty string"
+  },
+  "String.Empty": {
+    "prefix": "se",
+    "body": [
+      "String.Empty"
+    ],
+    "description": "String.Empty"
+  },
+  "String.Format": {
+    "prefix": "stf",
+    "body": [
+      "String.Format(\"${1:template}\", $0)"
+    ],
+    "description": "String.Format"
+  },
+  "arrange act assert": {
+    "prefix": "aaa",
+    "body": [
+      "// arrange",
+      "$0",
+      "// act",
+      "",
+      "// assert",
+      ""
+    ],
+    "description": "Insert comments for arrange act and assert"
+  },
+  "If argument null throw": {
+    "prefix": "ian",
+    "body": [
+      "if (${1:argumentName} == null)",
+      "{",
+      "    throw new ArgumentNullException(nameof(${1:argumentName}), \"Argument cannot be null.\");",
+      "}$0"
+    ],
+    "description": "If argument equals null throw argument null exception"
+  },
+  "If argument is empty string throw": {
+    "prefix": "ians",
+    "body": [
+      "if (String.IsNullOrEmpty(${1:argumentName}) == true)",
+      "{",
+      "    throw new ArgumentNullException(nameof(${1:argumentName}), \"Argument cannot be null or empty.\");",
+      "}$0"
+    ],
+    "description": "If argument is empty string throw exception"
+  },
+  "If variable is null": {
+    "prefix": "ifn",
+    "body": [
+      "if (${1:variableName} == null)",
+      "{",
+      " $0   ",
+      "}"
+    ],
+    "description": "If variable is null"
+  },
+  "If variable is null assign": {
+    "prefix": "ifna",
+    "body": [
+      "if (${1:variableName} == null)",
+      "{",
+      " ${1:variableName} = new «TypeName(variableType}();$0   ",
+      "}"
+    ],
+    "description": "If variable is null, create a new instance"
+  },
+  "If variable is not null": {
+    "prefix": "inen",
+    "body": [
+      "if (${1:variableName} != null)",
+      "{",
+      "   $0    ",
+      "}"
+    ],
+    "description": "If variable is not null"
+  },
+  "Else if": {
+    "prefix": "li",
+    "body": [
+      "else if (${1})",
+      "{",
+      " $0",
+      "}"
+    ],
+    "description": "Else if"
+  },
+  "Else block with braces": {
+    "prefix": "lb",
+    "body": [
+      "else",
+      "{",
+      " $0",
+      "}"
+    ],
+    "description": "Else block with braces"
+  },
+  "Test Method": {
+    "prefix": "mvt",
+    "body": [
+      "[TestMethod]",
+      "public void ${1:TestMethodName}()",
+      "{",
+      " Assert.Inconclusive();",
+      "}$0",
+      ""
+    ],
+    "description": "Test Method"
+  },
+  "Not Equal": {
+    "prefix": "ne",
+    "body": [
+      "!= "
+    ],
+    "description": "Not Equal"
+  },
+  "Not equal to null": {
+    "prefix": "nen",
+    "body": [
+      "!= null"
+    ],
+    "description": "Not equal to null"
+  },
+  "On Test Initialize": {
+    "prefix": "oti",
+    "body": [
+      "[TestInitialize]",
+      "public void OnTestInitialize()",
+      "{",
+      "       ${1:codeToRun}",
+      "       $0",
+      "}"
+    ],
+    "description": "On Test Initialize"
+  },
+  "On Test Initialize set system under test to null": {
+    "prefix": "otisutn",
+    "body": [
+      "[TestInitialize]",
+      "public void OnTestInitialize()",
+      "{",
+      "       _SystemUnderTest = null;",
+      "       $0",
+      "}"
+    ],
+    "description": "Create an OnTestInitialize() and set system under test to null"
+  },
+  "String.Format with paste": {
+    "prefix": "stp",
+    "body": [
+      "String.Format(${CLIPBOARD}, $0)"
+    ],
+    "description": "String.Format with paste"
+  },
+  "SystemUnderTest property for unit tests": {
+    "prefix": "sut",
+    "body": [
+      "private ${1:TheType}$0 _SystemUnderTest;",
+      "        public ${1:TheType} SystemUnderTest",
+      "        {",
+      "            get",
+      "            {",
+      "                if (_SystemUnderTest == null)",
+      "                {",
+      "                    _SystemUnderTest = new ${1:TheType}();",
+      "                }",
+      "                ",
+      "                return _SystemUnderTest;",
+      "            }",
+      "        }"
+    ],
+    "description": "SystemUnderTest property for unit tests"
+  },
+  "Set SystemUnderTest variable to null": {
+    "prefix": "sutn",
+    "body": [
+      "_SystemUnderTest = null;"
+    ],
+    "description": "Set SystemUnderTest variable to null"
+  },
+  "Throw ArgumentNullException": {
+    "prefix": "tane",
+    "body": [
+      "throw new ArgumentNullException(${1:variable}, \"${2:errorMessage}\");$0"
+    ],
+    "description": "Throw ArgumentNullException"
+  },
+  "Create test class": {
+    "prefix": "tc",
+    "body": [
+      "[TestClass]",
+      "public class ${1:TestClassName}Fixture",
+      "{",
+      " public ${1:TestClassName}Fixture()",
+      " {",
+      " }",
+      "",
+      " $0 ",
+      "}"
+    ],
+    "description": "Create test fixture class"
+  },
+  "Create test fixture": {
+    "prefix": "tf",
+    "body": [
+      "[TestClass]",
+      "public class ${1:TestClassName}Fixture",
+      "{",
+      " public ${1:TestClassName}Fixture()",
+      " {",
+      " }",
+      "",
+      " $0 ",
+      "}"
+    ],
+    "description": "Create test fixture class"
+  },
+  "Create test class with sut": {
+    "prefix": "tfsut",
+    "body": [
+      "[TestClass]",
+      "public class ${1:TestClassName}Fixture",
+      "{",
+      " [TestInitialize]",
+      " public void OnTestInitialize()",
+      " {",
+      "  _SystemUnderTest = null;",
+      " } ",
+      " ",
+      " private ${1:TestClassName} _SystemUnderTest;",
+      " ",
+      " private ${1:TestClassName} SystemUnderTest",
+      " {",
+      "  get",
+      "  {",
+      "   if (_SystemUnderTest == null)",
+      "   {",
+      "    _SystemUnderTest = new ${1:TestClassName}();",
+      "   }",
+      "   ",
+      "   return _SystemUnderTest;",
+      "  }",
+      " }",
+      "",
+      " $0 ",
+      "}"
+    ],
+    "description": "Create test class with sut"
+  },
+  "Throw invalid operation exception": {
+    "prefix": "tnioe",
+    "body": [
+      "throw new InvalidOperationException(\"Argument cannot be null.\");"
+    ],
+    "description": "Throw invalid operation exception"
+  },
+  "Throw not implemented exception": {
+    "prefix": "tnie",
+    "body": [
+      "throw new NotImplementedException();"
+    ],
+    "description": "Throw not implemented exception"
+  },
+  "User interface try catch": {
+    "prefix": "uitrywin",
+    "body": [
+      "try",
+      "{",
+      " $0",
+      "}",
+      "catch (Exception ex)",
+      "{",
+      "  MessageBox.Show(ex.ToString());",
+      "} "
+    ],
+    "description": "User interface try catch"
+  },
+  "Try catch block": {
+    "prefix": "tcb",
+    "body": [
+      "try",
+      "{",
+      " $0",
+      "}",
+      "catch (Exception ex)",
+      "{",
+      "  ${1}",
+      "} "
+    ],
+    "description": "Try catch block"
+  },
+  "Public class": {
+    "prefix": "c",
+    "body": [
+      "public class ${1:ClassName}",
+      "{",
+      "    $0 ",
+      "}"
+    ],
+    "description": "Public class"
+  },
+  "Public interface": {
+    "prefix": "i",
+    "body": [
+      "public interface I${1:ClassName}",
+      "{",
+      "    $0 ",
+      "}"
+    ],
+    "description": "Public interface"
+  },
+  "Auto-implemented string property": {
+    "prefix": "aps",
+    "body": [
+      "public string ${1:ClassName} { get; set; }$0"
+    ],
+    "description": "Auto-implemented string property"
+  },
+  "Auto-implemented int property": {
+    "prefix": "api",
+    "body": [
+      "public int ${1:ClassName} { get; set; }$0"
+    ],
+    "description": "Auto-implemented int property"
+  },
+  "Auto-implemented bool property": {
+    "prefix": "apb",
+    "body": [
+      "public bool ${1:ClassName} { get; set; }$0"
+    ],
+    "description": "Auto-implemented bool property"
+  },
+  "Auto-implemented float property": {
+    "prefix": "apf",
+    "body": [
+      "public float ${1:ClassName} { get; set; }$0"
+    ],
+    "description": "Auto-implemented float property"
+  },
+  "Auto-implemented property": {
+    "prefix": "ap",
+    "body": [
+      "public ${1:Type} ${2:ClassName} { get; set; }$0"
+    ],
+    "description": "Auto-implemented property"
+  },
+  "Read-only string property": {
+    "prefix": "rs",
+    "body": [
+      "private string _${1:ClassName};",
+      "",
+      "public string ${1:ClassName}",
+      "{",
+      "    get",
+      "    {",
+      "         return _${1:ClassName};$0",
+      "    }",
+      "}"
+    ],
+    "description": "Read-only string property"
+  },
+  "Read-only int property": {
+    "prefix": "ri",
+    "body": [
+      "private int _${1:ClassName};",
+      "",
+      "public int ${1:ClassName}",
+      "{",
+      "    get",
+      "    {",
+      "         return _${1:ClassName};$0",
+      "    }",
+      "}"
+    ],
+    "description": "Read-only int property"
+  },
+  "Read-only bool property": {
+    "prefix": "rb",
+    "body": [
+      "private bool _${1:ClassName};",
+      "",
+      "public bool ${1:ClassName}",
+      "{",
+      "    get",
+      "    {",
+      "         return _${1:ClassName};$0",
+      "    }",
+      "}"
+    ],
+    "description": "Read-only bool property"
+  },
+  "Read-only property": {
+    "prefix": "rp",
+    "body": [
+      "private ${1:Type} _${2:ClassName};",
+      "",
+      "public ${1:Type} ${2:ClassName}",
+      "{",
+      "    get",
+      "    {",
+      "         return _${2:ClassName};$0",
+      "    }",
+      "}"
+    ],
+    "description": "Read-only property"
+  },
+  "Property (string) with backing variable": {
+    "prefix": "ps",
+    "body": [
+      "private string _${1:ClassName};",
+      "",
+      "public string ${1:ClassName}",
+      "{",
+      "    get",
+      "    {",
+      "         return _${1:ClassName};",
+      "    }",
+      "    set",
+      "    {",
+      "         _${1:ClassName} = value;",
+      "    }",
+      "}",
+      "$0"
+    ],
+    "description": "Property (string) with backing variable"
+  },
+  "Property with backing variable": {
+    "prefix": "p",
+    "body": [
+      "private ${1:Type} _${2:ClassName};",
+      "",
+      "public ${1:Type} ${2:ClassName}",
+      "{",
+      "    get",
+      "    {",
+      "         return _${2:ClassName};",
+      "    }",
+      "    set",
+      "    {",
+      "         _${2:ClassName} = value;",
+      "    }",
+      "}",
+      "$0"
+    ],
+    "description": "Property with backing variable"
+  },
+  "ASP.NET controller action method": {
+    "prefix": "mca",
+    "body": [
+      "public IActionResult ${1:methodName}()",
+      "{",
+      "    var model = new ${2:ModelClassName}();",
+      "",
+      "    $0",
+      "",
+      "    return View(model);",
+      "}"
+    ],
+    "description": "ASP.NET controller action method"
+  },
+  "ASP.NET controller HTTP post action method": {
+    "prefix": "mcap",
+    "body": [
+      "[HttpPost]",
+      "[ValidateAntiForgeryToken]",
+      "public ActionResult ${1:methodName}(${2:ModelClassName} model)",
+      "{",
+      "    if (ModelState.IsValid)",
+      "    {",
+      "        $0",
+      "    }",
+      "",
+      "    return View(\"Index\", model);",
+      "}"
+    ],
+    "description": "ASP.NET controller HTTP post action method"
+  },
+  "ASP.NET controller return 404 not found": {
+    "prefix": "r404",
+    "body": [
+      "return NotFound();$0"
+    ],
+    "description": "ASP.NET controller return 404 not found"
+  },
+  "ASP.NET controller return not found ": {
+    "prefix": "rnf",
+    "body": [
+      "return NotFound();$0"
+    ],
+    "description": "ASP.NET controller return 404 not found"
+  },
+  "ASP.NET controller return bad request": {
+    "prefix": "rbr",
+    "body": [
+      "return new BadRequestResult();$0"
+    ],
+    "description": "ASP.NET controller return bad request"
+  },
+  "ASP.NET controller redirect to action name": {
+    "prefix": "rr",
+    "body": [
+      "return RedirectToAction(\"${1:actionName}\");"
+    ],
+    "description": "ASP.NET controller redirect to action name"
+  },
+  "ASP.NET controller redirect to action with id": {
+    "prefix": "rrid",
+    "body": [
+      "return RedirectToAction(\"${1:actionName}\", new { id = ${2:idValue} });"
+    ],
+    "description": "ASP.NET controller redirect to action with id"
+  },
+  "Register DbContext for ASP.NET Core": {
+    "prefix": "aspdbc",
+    "body": [
+      "// using Microsoft.EntityFrameworkCore;",
+      "services.AddDbContext<{1:dbContextName}DbContext>(options =>",
+      "    options.UseSqlServer(Configuration.GetConnectionString(\"default\")));$0"
+    ],
+    "description": "Register DbContext for ASP.NET Core"
+  },
+  "Code block braces": {
+    "prefix": "b",
+    "body": [
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Code block braces"
+  },
+  "Return true": {
+    "prefix": "rt",
+    "body": [
+      "return true;$0"
+    ],
+    "description": "Return true"
+  },
+  "Return false": {
+    "prefix": "rf",
+    "body": [
+      "return false;$0"
+    ],
+    "description": "Return false"
+  },
+  "if block with braces": {
+    "prefix": "ifb",
+    "body": [
+      "if ($0)",
+      "{",
+      "",
+      "}"
+    ],
+    "description": "if block with braces"
+  },
+  "Return String.Empty": {
+    "prefix": "rse",
+    "body": [
+      "return String.Empty;$0"
+    ],
+    "description": "Return String.Empty"
+  },
+  "Return": {
+    "prefix": "r",
+    "body": [
+      "return $0;"
+    ],
+    "description": "Return"
+  },
+  "foreach statement": {
+    "prefix": "fe",
+    "body": [
+      "foreach (var ${2:item} in ${1:items})",
+      "{",
+      "$0",
+      "}"
+    ],
+    "description": "foreach statement"
+  },
+  "Declare a new instance of StringBuilder": {
+    "prefix": "nsb",
+    "body": [
+      "var ${1:builder} = new StringBuilder();$0"
+    ],
+    "description": "Declare a new instance of StringBuilder"
+  },
+  "Method that returns string": {
+    "prefix": "ms",
+    "body": [
+      "public string ${1:MethodName}()",
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Method that returns string"
+  },
+  "Method that returns void": {
+    "prefix": "mv",
+    "body": [
+      "public void ${1:MethodName}()",
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Method that returns void"
+  },
+  "Method that returns bool": {
+    "prefix": "mb",
+    "body": [
+      "public bool ${1:MethodName}()",
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Method that returns bool"
+  },
+  "Method that returns float": {
+    "prefix": "mf",
+    "body": [
+      "public float ${1:MethodName}()",
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Method that returns float"
+  },
+  "Method that returns int": {
+    "prefix": "mi",
+    "body": [
+      "public int ${1:MethodName}()",
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Method that returns int"
+  }  ,
+  "Method that returns a type of your choosing": {
+    "prefix": "mm",
+    "body": [
+      "public ${2:void} ${1:MethodName}()",
+      "{",
+      "$0",
+      "}",
+      ""
+    ],
+    "description": "Method that returns a type of your choosing"
+  },
+  "Test Snippet Multiple Unnamed Variables": {
+    "prefix": "tsmunv",
+    "body": [
+      "else if (${1}${2})",
+      "{",
+        "${2}",
+        "${3}",
+      " $0",
+      "}"
+    ],
+    "description": "This is only used for test cases in the snippet converter tool"
+  },
+}

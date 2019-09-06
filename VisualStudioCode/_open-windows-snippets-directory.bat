@@ -1,0 +1,1 @@
+explorer %appdata%\Code\User\snippets
