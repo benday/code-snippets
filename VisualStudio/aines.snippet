@@ -1,0 +1,23 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Assert string is null or empty</Title>
+      <Shortcut>aines</Shortcut>
+      <Description>Assert string is null or empty</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>actual</ID>
+          <ToolTip></ToolTip>
+          <Default>actual</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Assert.IsTrue(String.IsNullOrEmpty($actual$), "${1:variableName} should be null or empty.");$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

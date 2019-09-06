@@ -1,0 +1,19 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Register DbContext for ASP.NET Core</Title>
+      <Shortcut>aspdbc</Shortcut>
+      <Description>Register DbContext for ASP.NET Core</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations></Declarations>
+      <Code Language="csharp"><![CDATA[// using Microsoft.EntityFrameworkCore;
+services.AddDbContext<{1:dbContextName}DbContext>(options =>
+    options.UseSqlServer(Configuration.GetConnectionString("default")));$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

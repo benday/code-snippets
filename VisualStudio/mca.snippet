@@ -1,0 +1,35 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>ASP.NET controller action method</Title>
+      <Shortcut>mca</Shortcut>
+      <Description>ASP.NET controller action method</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>methodName</ID>
+          <ToolTip></ToolTip>
+          <Default>methodName</Default>
+        </Literal>
+        <Literal>
+          <ID>ModelClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>ModelClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[public IActionResult $methodName$()
+{
+    var model = new $ModelClassName$();
+
+    $end$
+
+    return View(model);
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

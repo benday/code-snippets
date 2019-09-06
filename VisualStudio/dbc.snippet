@@ -1,0 +1,30 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>DbContext class</Title>
+      <Shortcut>dbc</Shortcut>
+      <Description>DbContext class</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>DbContextClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>DbContextClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[public class $DbContextClassName$DbContext : DbContext
+{
+ public ${1:DbContextDbContext}DbContext(DbContextOptions options) : base(options)
+ {
+ }
+
+ $end$ 
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

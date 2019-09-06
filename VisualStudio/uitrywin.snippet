@@ -1,0 +1,24 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>User interface try catch</Title>
+      <Shortcut>uitrywin</Shortcut>
+      <Description>User interface try catch</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations></Declarations>
+      <Code Language="csharp"><![CDATA[try
+{
+ $end$
+}
+catch (Exception ex)
+{
+  MessageBox.Show(ex.ToString());
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

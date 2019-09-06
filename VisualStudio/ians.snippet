@@ -1,0 +1,26 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>If argument is empty string throw exception</Title>
+      <Shortcut>ians</Shortcut>
+      <Description>If argument is empty string throw exception</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>argumentName</ID>
+          <ToolTip></ToolTip>
+          <Default>argumentName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[if (String.IsNullOrEmpty($argumentName$) == true)
+{
+    throw new ArgumentNullException(nameof($argumentName$), "Argument cannot be null or empty.");
+}$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,33 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Assert ints are not equal</Title>
+      <Shortcut>anei</Shortcut>
+      <Description>Assert ints are not equal</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>expected</ID>
+          <ToolTip></ToolTip>
+          <Default>expected</Default>
+        </Literal>
+        <Literal>
+          <ID>actual</ID>
+          <ToolTip></ToolTip>
+          <Default>actual</Default>
+        </Literal>
+        <Literal>
+          <ID>errorMessage</ID>
+          <ToolTip></ToolTip>
+          <Default>errorMessage</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Assert.AreNotEqual<int>($expected$, $actual$, "$errorMessage$");]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

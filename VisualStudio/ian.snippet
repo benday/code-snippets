@@ -1,0 +1,26 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>If argument equals null throw argument null exception</Title>
+      <Shortcut>ian</Shortcut>
+      <Description>If argument equals null throw argument null exception</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>argumentName</ID>
+          <ToolTip></ToolTip>
+          <Default>argumentName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[if ($argumentName$ == null)
+{
+    throw new ArgumentNullException(nameof($argumentName$), "Argument cannot be null.");
+}$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,85 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create DbContextFactory class</Title>
+      <Shortcut>dbcf</Shortcut>
+      <Description>Create DbContextFactory class</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>DbContextClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>DbContextClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[$end$public class $DbContextClassName$DesignTimeDbContextFactory : 
+  IDesignTimeDbContextFactory<$DbContextClassName$DbContext>
+{
+    public $DbContextClassName$DbContext Create()
+    {
+        var environmentName = 
+   Environment.GetEnvironmentVariable(
+    "ASPNETCORE_ENVIRONMENT");
+
+        var basePath = AppContext.BaseDirectory;
+
+  return Create(basePath, environmentName);
+ }
+
+    public $DbContextClassName$DbContext CreateDbContext(string[] args)
+    {
+        return Create(
+            Directory.GetCurrentDirectory(),
+            Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"));
+    }
+
+    private $DbContextClassName$DbContext Create(string basePath, string environmentName)
+    {
+        var builder = new ConfigurationBuilder()
+            .SetBasePath(basePath)
+            .AddJsonFile("appsettings.json")
+            .AddJsonFile($"appsettings.{environmentName}.json", true)
+            .AddEnvironmentVariables();
+
+        var config = builder.Build();
+
+        var connstr = config.GetConnectionString("default");
+
+        if (String.IsNullOrWhiteSpace(connstr) == true)
+        {
+            throw new InvalidOperationException(
+                "Could not find a connection string named 'default'.");
+        }
+        else
+        {
+            return Create(connstr);
+        }
+    }
+
+ private $DbContextClassName$DbContext Create(string connectionString)
+ {
+  if (string.IsNullOrEmpty(connectionString))
+      throw new ArgumentException(
+         $"{nameof(connectionString)} is null or empty.",
+         nameof(connectionString));
+        
+     var optionsBuilder =
+       new DbContextOptionsBuilder<$DbContextClassName$DbContext>();
+
+  Console.WriteLine(
+   "$DbContextClassName$DesignTimeDbContextFactory.Create(string): Connection string: {0}",
+   connectionString);
+
+  optionsBuilder.UseSqlServer(connectionString);
+
+  return new $DbContextClassName$DbContext(optionsBuilder.Options);
+ }
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

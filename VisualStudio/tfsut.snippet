@@ -1,0 +1,48 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create test class with sut</Title>
+      <Shortcut>tfsut</Shortcut>
+      <Description>Create test class with sut</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>TestClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>TestClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[TestClass]
+public class $TestClassName$Fixture
+{
+ [TestInitialize]
+ public void OnTestInitialize()
+ {
+  _SystemUnderTest = null;
+ } 
+ 
+ private $TestClassName$ _SystemUnderTest;
+ 
+ private $TestClassName$ SystemUnderTest
+ {
+  get
+  {
+   if (_SystemUnderTest == null)
+   {
+    _SystemUnderTest = new $TestClassName$();
+   }
+   
+   return _SystemUnderTest;
+  }
+ }
+
+ $end$ 
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
