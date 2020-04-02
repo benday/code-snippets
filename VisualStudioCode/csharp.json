@@ -133,6 +133,13 @@
     ],
     "description": "Assert AreEqual with ints"
   },
+  "Assert AreEqual with bools": {
+    "prefix": "aeb",
+    "body": [
+      "Assert.AreEqual<bool>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert AreEqual with bools"
+  },
   "Assert AreEqual with strings": {
     "prefix": "aes",
     "body": [
@@ -258,6 +265,13 @@
       "Assert.AreNotEqual<int>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
     ],
     "description": "Assert ints are not equal"
+  },
+  "Assert bools are not equal": {
+    "prefix": "aneb",
+    "body": [
+      "Assert.AreNotEqual<bool>(${1:expected}, ${2:actual}, \"${3:errorMessage}\");"
+    ],
+    "description": "Assert bools are not equal"
   },
   "Assert strings are not equal": {
     "prefix": "anes",
@@ -927,6 +941,13 @@
       "var ${1:builder} = new StringBuilder();$0"
     ],
     "description": "Declare a new instance of StringBuilder"
+  },
+  "Declare a new instance of List<string>": {
+    "prefix": "nls",
+    "body": [
+      "var ${1:temp} = new List<string>();$0"
+    ],
+    "description": "Declare a new instance of List<string>"
   },
   "Method that returns string": {
     "prefix": "ms",

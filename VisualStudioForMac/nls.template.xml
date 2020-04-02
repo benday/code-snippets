@@ -1,0 +1,19 @@
+<CodeTemplates version="3.0">
+  <CodeTemplate version="2.0">
+    <Header>
+      <_Group>benday</_Group>
+      <Version />
+      <MimeType>text/x-csharp</MimeType>
+      <Shortcut>nls</Shortcut>
+      <_Description>Declare a new instance of List&lt;string&gt;</_Description>
+      <TemplateType>Expansion</TemplateType>
+    </Header>
+    <Variables>
+      <Variable name="builder" isIdentifier="true">
+        <Default>temp</Default>
+        <_ToolTip></_ToolTip>
+      </Variable>
+    </Variables>
+    <Code><![CDATA[var $temp$ = new List<string>();$end$]]></Code>
+  </CodeTemplate>
+</CodeTemplates>
