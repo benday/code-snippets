@@ -161,6 +161,21 @@
     ],
     "description": "Assert.AreEqual to String.Empty"
   },
+  "Assert.AreEqual to String.Empty (variation 2)": {
+    "prefix": "aese",
+    "body": [
+      "Assert.AreEqual<string>(String.Empty, ${1:actual}, \"${2:errorMessage} should be empty.\");"
+    ],
+    "description": "Assert.AreEqual to String.Empty"
+  },
+  "Assert.AreNotEqual to String.Empty": {
+    "prefix": "anese",
+    "body": [
+      "Assert.AreNotEqual<string>(String.Empty, ${1:actual}, \"${2:errorMessage} should not be empty.\");"
+    ],
+    "description": "Assert.AreNotEqual to String.Empty"
+  },
+  
   "Assert.AreEqual on two properties": {
     "prefix": "aep",
     "body": [
@@ -280,13 +295,7 @@
     ],
     "description": "Assert strings are not equal"
   },
-  "Assert string is not empty string": {
-    "prefix": "anese",
-    "body": [
-      "Assert.AreNotEqual<string>(String.Empty, ${1:actual}, \"${2:errorMessage} should not be empty.\");"
-    ],
-    "description": "Assert string is not empty string"
-  },
+  
   "Assert bool properties are not equal": {
     "prefix": "anepb",
     "body": [
@@ -324,6 +333,20 @@
   },
   "Assert is null or empty string": {
     "prefix": "ans",
+    "body": [
+      "Assert.IsTrue(String.IsNullOrEmpty(${1:actual}), \"${2:Variable name} should be null or empty.\");"
+    ],
+    "description": "Assert is null or empty string"
+  },
+  "Assert is not null or empty string (variation 2)": {
+    "prefix": "annse",
+    "body": [
+      "Assert.IsFalse(String.IsNullOrEmpty(${1:actual}), \"${2:Variable name} was null or empty.\");"
+    ],
+    "description": "Assert is not null or empty string"
+  },
+  "Assert is null or empty string (variation 2)": {
+    "prefix": "anse",
     "body": [
       "Assert.IsTrue(String.IsNullOrEmpty(${1:actual}), \"${2:Variable name} should be null or empty.\");"
     ],

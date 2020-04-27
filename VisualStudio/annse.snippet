@@ -1,9 +1,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Assert.AreNotEqual to String.Empty</Title>
-      <Shortcut>anese</Shortcut>
-      <Description>Assert.AreNotEqual to String.Empty</Description>
+      <Title>Assert is not null or empty string</Title>
+      <Shortcut>annse</Shortcut>
+      <Description>Assert is not null or empty string</Description>
       <Author>Benjamin Day</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -17,12 +17,12 @@
           <Default>actual</Default>
         </Literal>
         <Literal>
-          <ID>errorMessage</ID>
+          <ID>Variable name</ID>
           <ToolTip></ToolTip>
-          <Default>errorMessage</Default>
+          <Default>Variable name</Default>
         </Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[Assert.AreNotEqual<string>(String.Empty, $actual$, "$errorMessage$ should not be empty.");$end$]]></Code>
+      <Code Language="csharp"><![CDATA[Assert.IsFalse(String.IsNullOrEmpty($actual$), "$Variable name$ was null or empty.");$end$]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
