@@ -802,6 +802,31 @@
     ],
     "description": "Property with backing variable"
   },
+  "Property with backing variable and init if null": {
+    "prefix": "pin",
+    "body": [
+      "private ${1:Type} _${2:VariableName};",
+      "",
+      "public ${1:Type} ${2:VariableName}",
+      "{",
+      "    get",
+      "    {",
+      "         if (_${2:VariableName} == null)",
+      "         {",
+      "              _${2:VariableName} = new ${1:Type}();",
+      "         }",
+      "",
+      "         return _${2:VariableName};",
+      "    }",
+      "    set",
+      "    {",
+      "         _${2:VariableName} = value;",
+      "    }",
+      "}",
+      "$0"
+    ],
+    "description": "Property with backing variable"
+  },
   "ASP.NET controller action method": {
     "prefix": "mca",
     "body": [
