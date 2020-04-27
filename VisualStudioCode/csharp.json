@@ -27,7 +27,7 @@
     "body": [
       "public class ${1:DbContextClassName}DbContext : DbContext",
       "{",
-      " public ${1:DbContextDbContext}DbContext(DbContextOptions options) : base(options)",
+      " public ${1:DbContextClassName}DbContext(DbContextOptions options) : base(options)",
       " {",
       " }",
       "",

@@ -19,12 +19,17 @@
       </Declarations>
       <Code Language="csharp"><![CDATA[public class $DbContextClassName$DbContext : DbContext
 {
- public ${1:DbContextDbContext}DbContext(DbContextOptions options) : base(options)
+ public $DbContextClassName$DbContext(DbContextOptions options) : base(options)
  {
  }
 
  $end$ 
 }]]></Code>
+      <Imports>
+        <Import>
+          <Namespace>Microsoft.EntityFrameworkCore</Namespace>
+        </Import>        
+      </Imports>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
