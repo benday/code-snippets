@@ -362,7 +362,7 @@
   "Console.WriteLine": {
     "prefix": "cwl",
     "body": [
-      "Console.WriteLine(\"${1:message}\");$0"
+      "Console.WriteLine(\\$\"${1:message}\");$0"
     ],
     "description": "Console.WriteLine"
   },
@@ -631,7 +631,7 @@
   "Throw invalid operation exception": {
     "prefix": "tnioe",
     "body": [
-      "throw new InvalidOperationException(\"Argument cannot be null.\");"
+      "throw new InvalidOperationException(\\$\"Nope.\");"
     ],
     "description": "Throw invalid operation exception"
   },
