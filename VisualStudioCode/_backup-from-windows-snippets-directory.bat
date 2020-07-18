@@ -1,1 +1,1 @@
-copy /y "%appdata%\Code\User\snippets\*.json" %userprofile%\Dropbox\stuff-from-macbook\vscode-snippets
+copy /y "%appdata%\Code\User\snippets\*.json" .
