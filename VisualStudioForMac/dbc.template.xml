@@ -16,11 +16,11 @@
     </Variables>
     <Code><![CDATA[public class $DbContextClassName$DbContext : DbContext
 {
- public $DbContextClassName$DbContext(DbContextOptions<$DbContextClassName$DbContext> options) : base(options)
+ public $DbContextClassName$DbContext(DbContextOptions options) : base(options)
  {
  }
 
- $end$
+ $end$ 
 }]]></Code>
   </CodeTemplate>
 </CodeTemplates>

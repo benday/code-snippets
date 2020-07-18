@@ -14,6 +14,6 @@
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[Console.WriteLine("$message$");$end$]]></Code>
+    <Code><![CDATA[Console.WriteLine($"$message$");$end$]]></Code>
   </CodeTemplate>
 </CodeTemplates>

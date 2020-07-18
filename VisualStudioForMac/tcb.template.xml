@@ -9,8 +9,8 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="1" isIdentifier="true">
-        <Default></Default>
+      <Variable name="Value" isIdentifier="true">
+        <Default>Value</Default>
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
@@ -20,7 +20,7 @@
 }
 catch (Exception ex)
 {
-  $1$
+  $Value$
 }]]></Code>
   </CodeTemplate>
 </CodeTemplates>

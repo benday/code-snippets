@@ -9,12 +9,12 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="1" isIdentifier="true">
-        <Default></Default>
+      <Variable name="Value" isIdentifier="true">
+        <Default>Value</Default>
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[else if ($1$)
+    <Code><![CDATA[else if ($Value$)
 {
  $end$
 }]]></Code>

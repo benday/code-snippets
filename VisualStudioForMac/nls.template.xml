@@ -9,7 +9,7 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="builder" isIdentifier="true">
+      <Variable name="temp" isIdentifier="true">
         <Default>temp</Default>
         <_ToolTip></_ToolTip>
       </Variable>

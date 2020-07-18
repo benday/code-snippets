@@ -1,4 +1,3 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
 <CodeTemplates version="3.0">
   <CodeTemplate version="2.0">
     <Header>
@@ -10,47 +9,38 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="DbContextClassName" isEditable="false" isIdentifier="true">
+      <Variable name="DbContextClassName" isIdentifier="true">
         <Default>DbContextClassName</Default>
-      </Variable>
-      <Variable name="DbContextName">
-        <Default>db-context-name</Default>
+        <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[
-      $end$
-      /*
-      using Microsoft.EntityFrameworkCore;
-      using Microsoft.EntityFrameworkCore.Design;
-      using Microsoft.Extensions.Configuration;
-      using System.IO;
-      */
-      public class $DbContextName$DesignTimeDbContextFactory : IDesignTimeDbContextFactory<$DbContextName$DbContext>
+    <Code><![CDATA[$end$public class $DbContextClassName$DesignTimeDbContextFactory : 
+  IDesignTimeDbContextFactory<$DbContextClassName$DbContext>
 {
-    public $DbContextName$DbContext Create()
+    public $DbContextClassName$DbContext Create()
     {
-        var environmentName = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT");
+        var environmentName = 
+   Environment.GetEnvironmentVariable(
+    "ASPNETCORE_ENVIRONMENT");
 
         var basePath = AppContext.BaseDirectory;
 
-        return Create(basePath, environmentName);
-    }
+  return Create(basePath, environmentName);
+ }
 
-    public $DbContextName$DbContext CreateDbContext(string[] args)
+    public $DbContextClassName$DbContext CreateDbContext(string[] args)
     {
         return Create(
             Directory.GetCurrentDirectory(),
             Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT"));
     }
 
-    private $DbContextName$DbContext Create(string basePath, string environmentName)
+    private $DbContextClassName$DbContext Create(string basePath, string environmentName)
     {
         var builder = new ConfigurationBuilder()
             .SetBasePath(basePath)
             .AddJsonFile("appsettings.json")
-            .AddJsonFile(
-                String.Format("appsettings.{0}.json", environmentName),
-                true)
+            .AddJsonFile($"appsettings.{environmentName}.json", true)
             .AddEnvironmentVariables();
 
         var config = builder.Build();
@@ -68,24 +58,24 @@
         }
     }
 
-    private $DbContextName$DbContext Create(string connectionString)
-    {
-        if (string.IsNullOrEmpty(connectionString))
-            throw new ArgumentException(
-                String.Format("{0} is null or empty.", nameof(connectionString)),
-                nameof(connectionString));
+ private $DbContextClassName$DbContext Create(string connectionString)
+ {
+  if (string.IsNullOrEmpty(connectionString))
+      throw new ArgumentException(
+         $"{nameof(connectionString)} is null or empty.",
+         nameof(connectionString));
+        
+     var optionsBuilder =
+       new DbContextOptionsBuilder<$DbContextClassName$DbContext>();
 
-        var optionsBuilder =
-            new DbContextOptionsBuilder<$DbContextName$DbContext>();
+  Console.WriteLine(
+   "$DbContextClassName$DesignTimeDbContextFactory.Create(string): Connection string: {0}",
+   connectionString);
 
-        Console.WriteLine(
-            "MyDesignTimeDbContextFactory.Create(string): Connection string: {0}",
-            connectionString);
+  optionsBuilder.UseSqlServer(connectionString);
 
-        optionsBuilder.UseSqlServer(connectionString);
-
-        return new $DbContextName$DbContext(optionsBuilder.Options);
-    }
+  return new $DbContextClassName$DbContext(optionsBuilder.Options);
+ }
 }]]></Code>
   </CodeTemplate>
 </CodeTemplates>

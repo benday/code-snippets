@@ -9,11 +9,11 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="C" isIdentifier="true">
-        <Default></Default>
+      <Variable name="ValueC" isIdentifier="true">
+        <Default>ValueC</Default>
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[String.Format($C$, $end$)]]></Code>
+    <Code><![CDATA[String.Format($ValueC$, $end$)]]></Code>
   </CodeTemplate>
 </CodeTemplates>

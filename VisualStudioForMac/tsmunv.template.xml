@@ -9,23 +9,23 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="1" isIdentifier="true">
-        <Default></Default>
+      <Variable name="Value" isIdentifier="true">
+        <Default>Value</Default>
         <_ToolTip></_ToolTip>
       </Variable>
-      <Variable name="2" isIdentifier="true">
-        <Default></Default>
+      <Variable name="Value2" isIdentifier="true">
+        <Default>Value2</Default>
         <_ToolTip></_ToolTip>
       </Variable>
-      <Variable name="3" isIdentifier="true">
-        <Default></Default>
+      <Variable name="Value3" isIdentifier="true">
+        <Default>Value3</Default>
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[else if ($1$$2$)
+    <Code><![CDATA[else if ($Value$$Value2$)
 {
-$2$
-$3$
+$Value2$
+$Value3$
  $end$
 }]]></Code>
   </CodeTemplate>

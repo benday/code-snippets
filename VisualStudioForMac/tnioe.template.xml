@@ -9,6 +9,6 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables></Variables>
-    <Code><![CDATA[throw new InvalidOperationException("Argument cannot be null.");]]></Code>
+    <Code><![CDATA[throw new InvalidOperationException($"Nope.");]]></Code>
   </CodeTemplate>
 </CodeTemplates>

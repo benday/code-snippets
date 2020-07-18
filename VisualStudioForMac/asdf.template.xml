@@ -9,12 +9,12 @@
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="T" isIdentifier="true">
-        <Default></Default>
+      <Variable name="ValueT" isIdentifier="true">
+        <Default>ValueT</Default>
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[TM_FILENAME: $T$
+    <Code><![CDATA[TM_FILENAME: $ValueT$
 TM_FILENAME_BASE: ${TM_FILENAME_BASE}
 TM_DIRECTORY: ${TM_DIRECTORY}
 TM_FILEPATH: ${TM_FILEPATH}]]></Code>

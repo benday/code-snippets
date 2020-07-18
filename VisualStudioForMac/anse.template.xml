@@ -4,24 +4,20 @@
       <_Group>benday</_Group>
       <Version />
       <MimeType>text/x-csharp</MimeType>
-      <Shortcut>aneb</Shortcut>
-      <_Description>Assert bools are not equal</_Description>
+      <Shortcut>anse</Shortcut>
+      <_Description>Assert is null or empty string</_Description>
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
-      <Variable name="expected" isIdentifier="true">
-        <Default>expected</Default>
-        <_ToolTip></_ToolTip>
-      </Variable>
       <Variable name="actual" isIdentifier="true">
         <Default>actual</Default>
         <_ToolTip></_ToolTip>
       </Variable>
-      <Variable name="errorMessage" isIdentifier="true">
-        <Default>errorMessage</Default>
+      <Variable name="Variable name" isIdentifier="true">
+        <Default>Variable name</Default>
         <_ToolTip></_ToolTip>
       </Variable>
     </Variables>
-    <Code><![CDATA[Assert.AreNotEqual<bool>($expected$, $actual$, "$errorMessage$");]]></Code>
+    <Code><![CDATA[Assert.IsTrue(String.IsNullOrEmpty($actual$), "$Variable name$ should be null or empty.");]]></Code>
   </CodeTemplate>
 </CodeTemplates>

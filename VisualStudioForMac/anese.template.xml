@@ -5,7 +5,7 @@
       <Version />
       <MimeType>text/x-csharp</MimeType>
       <Shortcut>anese</Shortcut>
-      <_Description>Assert string is not empty string</_Description>
+      <_Description>Assert.AreNotEqual to String.Empty</_Description>
       <TemplateType>Expansion</TemplateType>
     </Header>
     <Variables>
