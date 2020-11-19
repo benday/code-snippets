@@ -36,6 +36,28 @@
     ],
     "description": "DbContext class"
   },
+  "dbcu": {
+    "prefix": "dbcu",
+    "body": [
+      "using System;",
+      "using System.IO;",
+      "using Microsoft.EntityFrameworkCore;",
+      "using Microsoft.EntityFrameworkCore.Design;",
+      "using Microsoft.Extensions.Configuration;"
+    ],
+    "description": "Add usings for Entity Framework Core stuff"
+  },
+  "dbcdi": {
+    "prefix": "dbcdi",
+    "body": [
+      "services.AddDbContext<MyDbContext>(options =>",
+      "{",
+      "options.UseSqlServer(Configuration.GetConnectionString(\"default\"));",
+      "options.EnableSensitiveDataLogging(true);",
+      "});"
+    ],
+    "description": "Add Entity Framework Core for registering DbContext for ASP.NET dependency injection"
+  },
   "dbs": {
     "prefix": "dbs",
     "body": [
