@@ -1,0 +1,35 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>SystemUnderTest property for unit tests</Title>
+      <Shortcut>sut</Shortcut>
+      <Description>SystemUnderTest property for unit tests</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>TheType</ID>
+          <ToolTip></ToolTip>
+          <Default>TheType</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[private $TheType$$end$ _SystemUnderTest;
+        public $TheType$ SystemUnderTest
+        {
+            get
+            {
+                if (_SystemUnderTest == null)
+                {
+                    _SystemUnderTest = new $TheType$();
+                }
+                
+                return _SystemUnderTest;
+            }
+        }]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

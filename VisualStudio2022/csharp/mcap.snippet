@@ -1,0 +1,38 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>ASP.NET controller HTTP post action method</Title>
+      <Shortcut>mcap</Shortcut>
+      <Description>ASP.NET controller HTTP post action method</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>methodName</ID>
+          <ToolTip></ToolTip>
+          <Default>methodName</Default>
+        </Literal>
+        <Literal>
+          <ID>ModelClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>ModelClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[HttpPost]
+[ValidateAntiForgeryToken]
+public ActionResult $methodName$($ModelClassName$ model)
+{
+    if (ModelState.IsValid)
+    {
+        $end$
+    }
+
+    return View("Index", model);
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,0 +1,28 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Throw ArgumentNullException</Title>
+      <Shortcut>tane</Shortcut>
+      <Description>Throw ArgumentNullException</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>variable</ID>
+          <ToolTip></ToolTip>
+          <Default>variable</Default>
+        </Literal>
+        <Literal>
+          <ID>errorMessage</ID>
+          <ToolTip></ToolTip>
+          <Default>errorMessage</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[throw new ArgumentNullException($variable$, "$errorMessage$");$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

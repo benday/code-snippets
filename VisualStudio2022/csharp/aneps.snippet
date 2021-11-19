@@ -1,0 +1,23 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Assert string properties are not equal</Title>
+      <Shortcut>aneps</Shortcut>
+      <Description>Assert string properties are not equal</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>propertyName</ID>
+          <ToolTip></ToolTip>
+          <Default>propertyName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[Assert.AreNotEqual<string>(expected.$propertyName$, actual.$propertyName$, "$propertyName$");$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

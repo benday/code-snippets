@@ -1,0 +1,2 @@
+echo explorer "%OneDriveCommercial%\Documents\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets"
+explorer "%OneDriveCommercial%\Documents\Visual Studio 2022\Code Snippets\Visual C#\My Code Snippets"

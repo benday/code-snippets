@@ -1,0 +1,36 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Property (string) with backing variable</Title>
+      <Shortcut>ps</Shortcut>
+      <Description>Property (string) with backing variable</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>ClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>ClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[private string _$ClassName$;
+
+public string $ClassName$
+{
+    get
+    {
+         return _$ClassName$;
+    }
+    set
+    {
+         _$ClassName$ = value;
+    }
+}
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

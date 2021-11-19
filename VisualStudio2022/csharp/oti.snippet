@@ -1,0 +1,28 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>On Test Initialize</Title>
+      <Shortcut>oti</Shortcut>
+      <Description>On Test Initialize</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>codeToRun</ID>
+          <ToolTip></ToolTip>
+          <Default>codeToRun</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[TestInitialize]
+public void OnTestInitialize()
+{
+       $codeToRun$
+       $end$
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

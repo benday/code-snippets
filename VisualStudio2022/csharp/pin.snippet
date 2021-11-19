@@ -1,0 +1,46 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Property with backing variable</Title>
+      <Shortcut>pin</Shortcut>
+      <Description>Property with backing variable</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Type</ID>
+          <ToolTip></ToolTip>
+          <Default>Type</Default>
+        </Literal>
+        <Literal>
+          <ID>VariableName</ID>
+          <ToolTip></ToolTip>
+          <Default>VariableName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[private $Type$ _$VariableName$;
+
+public $Type$ $VariableName$
+{
+    get
+    {
+         if (_$VariableName$ == null)
+         {
+              _$VariableName$ = new $Type$();
+         }
+
+         return _$VariableName$;
+    }
+    set
+    {
+         _$VariableName$ = value;
+    }
+}
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
