@@ -36,6 +36,7 @@
     ],
     "description": "DbContext class"
   },
+  
   "dbcu": {
     "prefix": "dbcu",
     "body": [
@@ -712,6 +713,49 @@
     ],
     "description": "Public interface"
   },
+ 
+
+  "Auto-implemented string property with json property attribute": {
+    "prefix": "jps",
+    "body": [
+      "[JsonPropertyName(\"${1/(.*)/${1:/camelcase}/}\")]",
+      "public string ${1:PropertyName} { get; set; }",
+      "$0"
+    ],
+    "description": "Auto-implemented string property with json property attribute"
+  },
+
+  "Auto-implemented bool property with json property attribute": {
+    "prefix": "jpb",
+    "body": [
+      "[JsonPropertyName(\"${1/(.*)/${1:/camelcase}/}\")]",
+      "public bool ${1:PropertyName} { get; set; }",
+      "$0"
+    ],
+    "description": "Auto-implemented bool property with json property attribute"
+  },
+
+  "Auto-implemented int property with json property attribute": {
+    "prefix": "jpi",
+    "body": [
+      "[JsonPropertyName(\"${1/(.*)/${1:/camelcase}/}\")]",
+      "public int ${1:PropertyName} { get; set; }",
+      "$0"
+    ],
+    "description": "Auto-implemented int property with json property attribute"
+  },
+
+  "Auto-implemented datetime property with json property attribute": {
+    "prefix": "jpd8",
+    "body": [
+      "[JsonPropertyName(\"${1/(.*)/${1:/camelcase}/}\")]",
+      "public DateTime ${1:PropertyName} { get; set; }",
+      "$0"
+    ],
+    "description": "Auto-implemented datetime property with json property attribute"
+  },
+
+
   "Auto-implemented string property": {
     "prefix": "aps",
     "body": [

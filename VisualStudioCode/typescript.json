@@ -24,4 +24,30 @@
 		],
 		"description": "String.Format"
 	  },
+	  "angular field": {
+		"prefix": "ngf",
+		"body": [
+		  "public readonly fieldName${1/(.*)/${1:/pascalcase}/}: string = '${1/(.*)/${1:/camelcase}/}';",
+		  "public get ${1/(.*)/${1:/camelcase}/}(): AbstractControl | null {",
+		  "return this.theForm.get(this.fieldName${1/(.*)/${1:/pascalcase}/});",
+		  "}",
+		  "$0"		  
+		],
+		"description": "angular field definition in a component"
+	  },
+	  "angular field assertion": {
+		"prefix": "ngaf",
+		"body": [
+		  "it('should have a form control for ${1/(.*)/${1:/camelcase}/}', () => {",
+			"systemUnderTest.ngOnInit();",
+		"",
+			"TestUtilities.assertFormControl(",
+			  "systemUnderTest.${1/(.*)/${1:/camelcase}/},",
+			  "systemUnderTest.theForm.get(systemUnderTest.fieldName${1/(.*)/${1:/pascalcase}/})",
+			");",
+		  "});",
+		  "$0"
+		],
+		"description": "angular field definition assertion in spec"
+	  },
 }

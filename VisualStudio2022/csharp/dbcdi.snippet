@@ -1,0 +1,21 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Add Entity Framework Core for registering DbContext for ASP.NET dependency injection</Title>
+      <Shortcut>dbcdi</Shortcut>
+      <Description>Add Entity Framework Core for registering DbContext for ASP.NET dependency injection</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations></Declarations>
+      <Code Language="csharp"><![CDATA[services.AddDbContext<MyDbContext>(options =>
+{
+options.UseSqlServer(Configuration.GetConnectionString("default"));
+options.EnableSensitiveDataLogging(true);
+});$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
