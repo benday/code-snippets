@@ -1,0 +1,35 @@
+{
+	// Place your snippets for html here. Each snippet is defined under a snippet name and has a prefix, body and 
+	// description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
+	// $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the 
+	// same ids are connected.
+	// Example:
+	// "Print to console": {
+	// 	"prefix": "log",
+	// 	"body": [
+	// 		"console.log('$1');",
+	// 		"$2"
+	// 	],
+	// 	"description": "Log output to console"
+	// }
+	"angular field in html": {
+		"prefix": "ngf",
+		"body": [
+		  "<div class=\"mb-3\">",
+        "<div *ngIf=\"${1/(.*)/${1:/camelcase}/} !== null && ${1/(.*)/${1:/camelcase}/}.invalid && (${1/(.*)/${1:/camelcase}/}.dirty || ${1/(.*)/${1:/camelcase}/}.touched)\">",
+          "<div *ngIf=\"${1/(.*)/${1:/camelcase}/}.errors?.maxLength\" class=\"alert alert-warning\" role=\"alert\">",
+            "${2:fieldNameHumanReadable} is too long",
+          "</div>",
+          "<div *ngIf=\"${1/(.*)/${1:/camelcase}/}.errors?.required\" class=\"alert alert-warning\" role=\"alert\">",
+            "${2:fieldNameHumanReadable} value is required",
+          "</div>",
+        "</div>",
+        "<label class=\"form-label\" [for]=\"fieldName${1/(.*)/${1:/pascalcase}/}\">${2:fieldNameHumanReadable}</label>",
+        "<input type=\"text\" class=\"form-control\" maxlength=\"50\" required placeholder=\"${2:fieldNameHumanReadable}\"",
+          "[id]=\"fieldName${1/(.*)/${1:/pascalcase}/}\" formControlName=\"{{ fieldName${1/(.*)/${1:/pascalcase}/} }}\" />",
+      "</div>",
+	  "$0"
+		],
+		"description": "angular field reference in an html form"
+	  },
+}

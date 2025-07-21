@@ -36,7 +36,6 @@
     ],
     "description": "DbContext class"
   },
-  
   "dbcu": {
     "prefix": "dbcu",
     "body": [
@@ -135,6 +134,14 @@
     ],
     "description": "Create DbContextFactory class"
   },
+  "snippet for testing parsing of variables": {
+    "prefix": "testvariableparsingsnippet",
+    "body": [
+      "toValue.$1 = true;",
+      "$0"
+    ],
+    "description": "Adapt property"
+  },
   "Adapt property": {
     "prefix": "adp",
     "body": [
@@ -198,7 +205,6 @@
     ],
     "description": "Assert.AreNotEqual to String.Empty"
   },
-  
   "Assert.AreEqual on two properties": {
     "prefix": "aep",
     "body": [
@@ -318,7 +324,6 @@
     ],
     "description": "Assert strings are not equal"
   },
-  
   "Assert bool properties are not equal": {
     "prefix": "anepb",
     "body": [
@@ -556,10 +561,20 @@
     ],
     "description": "String.Format with paste"
   },
+  "Constructor for xUnit TestClassBase": {
+    "prefix": "ctortest",
+    "body": [
+      "public ${TM_FILENAME_BASE}(ITestOutputHelper output) : base(output)",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Constructor that uses the file name as class name"
+  },
   "SystemUnderTest property for unit tests": {
     "prefix": "sut",
     "body": [
-      "private ${1:TheType}$0 _SystemUnderTest;",
+      "private ${1:TheType}?$0 _SystemUnderTest;",
       "        public ${1:TheType} SystemUnderTest",
       "        {",
       "            get",
@@ -631,7 +646,7 @@
       "  _SystemUnderTest = null;",
       " } ",
       " ",
-      " private ${1:TestClassName} _SystemUnderTest;",
+      " private ${1:TestClassName}? _SystemUnderTest;",
       " ",
       " private ${1:TestClassName} SystemUnderTest",
       " {",
@@ -713,8 +728,6 @@
     ],
     "description": "Public interface"
   },
- 
-
   "Auto-implemented string property with json property attribute": {
     "prefix": "jps",
     "body": [
@@ -724,7 +737,6 @@
     ],
     "description": "Auto-implemented string property with json property attribute"
   },
-
   "Auto-implemented bool property with json property attribute": {
     "prefix": "jpb",
     "body": [
@@ -734,7 +746,6 @@
     ],
     "description": "Auto-implemented bool property with json property attribute"
   },
-
   "Auto-implemented int property with json property attribute": {
     "prefix": "jpi",
     "body": [
@@ -744,7 +755,6 @@
     ],
     "description": "Auto-implemented int property with json property attribute"
   },
-
   "Auto-implemented datetime property with json property attribute": {
     "prefix": "jpd8",
     "body": [
@@ -754,12 +764,10 @@
     ],
     "description": "Auto-implemented datetime property with json property attribute"
   },
-
-
   "Auto-implemented string property": {
     "prefix": "aps",
     "body": [
-      "public string ${1:ClassName} { get; set; }$0"
+      "public string ${1:ClassName} { get; set; } = string.Empty;$0"
     ],
     "description": "Auto-implemented string property"
   },
@@ -787,7 +795,7 @@
   "Auto-implemented property": {
     "prefix": "ap",
     "body": [
-      "public ${1:Type} ${2:ClassName} { get; set; }$0"
+      "public ${1:Type} ${2:PropertyName} { get; set; } = default();$0"
     ],
     "description": "Auto-implemented property"
   },
@@ -1117,7 +1125,7 @@
       ""
     ],
     "description": "Method that returns int"
-  }  ,
+  },
   "Method that returns a type of your choosing": {
     "prefix": "mm",
     "body": [
@@ -1134,8 +1142,8 @@
     "body": [
       "else if (${1}${2})",
       "{",
-        "${2}",
-        "${3}",
+      "${2}",
+      "${3}",
       " $0",
       "}"
     ],
