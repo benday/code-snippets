@@ -22,6 +22,51 @@
     ],
     "description": "DebugSnippet"
   },
+
+  "Command Class": {
+    "prefix": "cmd",
+    "body": [
+      "[Command(",
+    "    Name = \"${1/(.*)/${1:/downcase}/}\",",
+    "    Description = \"${2:Command description}\",",
+      "    IsAsync = true)]",
+    "public class ${1:CommandName}Command : AsynchronousCommand",
+      "{",
+      "    public ${1}Command(",
+      "        CommandExecutionInfo info, ITextOutputProvider outputProvider) : base(info, outputProvider)",
+      "    {",
+      "    }",
+      "",
+      "    public override ArgumentCollection GetArguments()",
+      "    {",
+      "        var arguments = new ArgumentCollection();",
+      "",
+      "$0",
+      "",
+      "        return arguments;",
+      "    }",
+      "",
+      "    protected override async Task OnExecute()",
+      "    {",
+      "",
+      "    }",
+      "",
+      "}"
+    ],
+    "description": "Creates a new GitHub CLI command class with standard structure"
+  },
+  
+  "Add Command Argument": {
+    "prefix": "cmda",
+    "body": [
+      "arguments.Add${1|String,Boolean,Int32,File,DateTime|}(\"${2:argumentname}\")",
+      "    .${3|AsRequired,AsNotRequired|}()",
+      "    .WithDescription(\"${4:Argument description}\");",
+      "$0"
+    ],
+    "description": "Adds a command argument to ArgumentCollection"
+  },
+
   "dbc": {
     "prefix": "dbc",
     "body": [
@@ -571,6 +616,81 @@
     ],
     "description": "Constructor that uses the file name as class name"
   },
+  "Create an xunit test class with sut": {
+    "prefix": "tfx",
+    "body": [
+      "public class ${TM_FILENAME_BASE} : TestClassBase",
+      "{",
+      "public ${TM_FILENAME_BASE}(ITestOutputHelper output) : base(output)",
+      "{",
+      "    $0",
+      "}",
+      " ",
+      " private ${1:TestClassName}? _SystemUnderTest;",
+      " ",
+      " private ${1:TestClassName} SystemUnderTest",
+      " {",
+      "  get",
+      "  {",
+      "   if (_SystemUnderTest == null)",
+      "   {",
+      "    _SystemUnderTest = new ${1:TestClassName}();",
+      "   }",
+      "   ",
+      "   return _SystemUnderTest;",
+      "  }",
+      " }",
+      "",
+      " $0 ",
+      "}"
+    ],
+    "description": "Create an XUnit test fixture class with sut"
+  },
+  "Create an xunit test class with moq sut": {
+    "prefix": "tfxm",
+    "body": [
+      "public class ${TM_FILENAME_BASE} : TestClassBase",
+      "{",
+      "public ${TM_FILENAME_BASE}(ITestOutputHelper output) : base(output)",
+      "{",
+      "    $0",
+      "}",
+      " ",
+      " private MockCreationResult<${1:TestClassName}>? _MockCreationResult;",
+      " ",
+      "protected MockCreationResult<${1:TestClassName}> Mocks",
+      " {",
+      "get",
+      "{",
+      "if (_MockCreationResult == null)",
+      "{",
+      " _MockCreationResult = MockUtility.CreateInstance<${1:TestClassName}>();",
+      "}",
+      "",
+      "         return _MockCreationResult;",
+      "}",
+      "}",
+      " ",
+      " private ${1:TestClassName}? _SystemUnderTest;",
+      " ",
+      " private ${1:TestClassName} SystemUnderTest",
+      " {",
+      "  get",
+      "  {",
+      "   if (_SystemUnderTest == null)",
+      "   {",
+      "    _SystemUnderTest = Mocks.Instance;",
+      "   }",
+      "   ",
+      "   return _SystemUnderTest;",
+      "  }",
+      " }",
+      "",
+      " $0 ",
+      "}"
+    ],
+    "description": "Create an XUnit test fixture class with sut"
+  },
   "SystemUnderTest property for unit tests": {
     "prefix": "sut",
     "body": [
@@ -732,7 +852,7 @@
     "prefix": "jps",
     "body": [
       "[JsonPropertyName(\"${1/(.*)/${1:/camelcase}/}\")]",
-      "public string ${1:PropertyName} { get; set; }",
+      "public string ${1:PropertyName} { get; set; } = string.Empty;",
       "$0"
     ],
     "description": "Auto-implemented string property with json property attribute"
