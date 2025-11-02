@@ -1,0 +1,41 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Adds a command argument to ArgumentCollection</Title>
+      <Shortcut>cmda</Shortcut>
+      <Description>Adds a command argument to ArgumentCollection</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>Value</ID>
+          <ToolTip></ToolTip>
+          <Default>Value</Default>
+        </Literal>
+        <Literal>
+          <ID>argumentname</ID>
+          <ToolTip></ToolTip>
+          <Default>argumentname</Default>
+        </Literal>
+        <Literal>
+          <ID>Value3</ID>
+          <ToolTip></ToolTip>
+          <Default>Value3</Default>
+        </Literal>
+        <Literal>
+          <ID>Argument description</ID>
+          <ToolTip></ToolTip>
+          <Default>Argument description</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[arguments.Add$Value$("$argumentname$")
+    .$Value3$()
+    .WithDescription("$Argument description$");
+$end$]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

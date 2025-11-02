@@ -1,0 +1,53 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Creates a new GitHub CLI command class with standard structure</Title>
+      <Shortcut>cmd</Shortcut>
+      <Description>Creates a new GitHub CLI command class with standard structure</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>CommandName</ID>
+          <ToolTip></ToolTip>
+          <Default>CommandName</Default>
+        </Literal>
+        <Literal>
+          <ID>Command description</ID>
+          <ToolTip></ToolTip>
+          <Default>Command description</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[[Command(
+    Name = "${1/(.*)/${1:/downcase}/}",
+    Description = "$Command description$",
+    IsAsync = true)]
+public class $CommandName$Command : AsynchronousCommand
+{
+    public ${1}Command(
+        CommandExecutionInfo info, ITextOutputProvider outputProvider) : base(info, outputProvider)
+    {
+    }
+
+    public override ArgumentCollection GetArguments()
+    {
+        var arguments = new ArgumentCollection();
+
+$end$
+
+        return arguments;
+    }
+
+    protected override async Task OnExecute()
+    {
+
+    }
+
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

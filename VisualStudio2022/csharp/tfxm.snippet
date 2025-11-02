@@ -1,0 +1,66 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create an XUnit test fixture class with sut</Title>
+      <Shortcut>tfxm</Shortcut>
+      <Description>Create an XUnit test fixture class with sut</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>TestClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>TestClassName</Default>
+        </Literal>
+        <Literal>
+          <ID> TestClassBas</ID>
+          <ToolTip></ToolTip>
+          <Default> TestClassBas</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[public class $ TestClassBas$ : TestClassBase
+{
+public $ TestClassBas$(ITestOutputHelper output) : base(output)
+{
+    $end$
+}
+ 
+ private MockCreationResult<$TestClassName$>? _MockCreationResult;
+ 
+protected MockCreationResult<$TestClassName$> Mocks
+ {
+get
+{
+if (_MockCreationResult == null)
+{
+ _MockCreationResult = MockUtility.CreateInstance<$TestClassName$>();
+}
+
+         return _MockCreationResult;
+}
+}
+ 
+ private $TestClassName$? _SystemUnderTest;
+ 
+ private $TestClassName$ SystemUnderTest
+ {
+  get
+  {
+   if (_SystemUnderTest == null)
+   {
+    _SystemUnderTest = Mocks.Instance;
+   }
+   
+   return _SystemUnderTest;
+  }
+ }
+
+ $end$ 
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

@@ -1,9 +1,9 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
   <CodeSnippet Format="1.0.0">
     <Header>
-      <Title>Auto-implemented string property with json property attribute</Title>
-      <Shortcut>jps</Shortcut>
-      <Description>Auto-implemented string property with json property attribute</Description>
+      <Title>Constructor that uses the file name as class name</Title>
+      <Shortcut>ctortest</Shortcut>
+      <Description>Constructor that uses the file name as class name</Description>
       <Author>Benjamin Day</Author>
       <SnippetTypes>
         <SnippetType>Expansion</SnippetType>
@@ -12,14 +12,15 @@
     <Snippet>
       <Declarations>
         <Literal>
-          <ID>PropertyName</ID>
+          <ID> base(output</ID>
           <ToolTip></ToolTip>
-          <Default>PropertyName</Default>
+          <Default> base(output</Default>
         </Literal>
       </Declarations>
-      <Code Language="csharp"><![CDATA[[JsonPropertyName("$PropertyName$")]
-public string $PropertyName$ { get; set; } = string.Empty;
-$end$]]></Code>
+      <Code Language="csharp"><![CDATA[public $ base(output$(ITestOutputHelper output) : base(output)
+{
+    $end$
+}]]></Code>
     </Snippet>
   </CodeSnippet>
 </CodeSnippets>
