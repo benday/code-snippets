@@ -1,0 +1,39 @@
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <Title>Create a Cosmos DB repository class and interface</Title>
+      <Shortcut>cosmosrepo</Shortcut>
+      <Description>Create a Cosmos DB repository class and interface</Description>
+      <Author>Benjamin Day</Author>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>DbContextClassName</ID>
+          <ToolTip></ToolTip>
+          <Default>DbContextClassName</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp"><![CDATA[public class CosmosDb$DbContextClassName$Repository : CosmosOwnedItemRepository<$DbContextClassName$>, I$DbContextClassName$Repository
+{
+    public CosmosDb$DbContextClassName$Repository(
+        IOptions<CosmosRepositoryOptions<$DbContextClassName$>> options,
+        CosmosClient client,
+        ILogger<DataAccess.CosmosDb$DbContextClassName$Repository> logger) :
+        base(options, client, logger)
+    {
+    }
+
+    $end$
+}
+
+public interface I$DbContextClassName$Repository : IOwnedItemRepository<$DbContextClassName$>
+{
+
+}]]></Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>
