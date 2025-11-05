@@ -1,17 +1,4 @@
 {
-  // Place your snippets for csharp here. Each snippet is defined under a snippet name and has a prefix, body and
-  // description. The prefix is what is used to trigger the snippet and the body will be expanded and inserted. Possible variables are:
-  // $1, $2 for tab stops, $0 for the final cursor position, and ${1:label}, ${2:another} for placeholders. Placeholders with the
-  // same ids are connected.
-  // Example:
-  // "Print to console": {
-  // 	"prefix": "log",
-  // 	"body": [
-  // 		"console.log('$1');",
-  // 		"$2"
-  // 	],
-  // 	"description": "Log output to console"
-  // }
   "DebugSnippet": {
     "prefix": "asdf",
     "body": [
@@ -22,15 +9,14 @@
     ],
     "description": "DebugSnippet"
   },
-
   "Command Class": {
     "prefix": "cmd",
     "body": [
       "[Command(",
-    "    Name = \"${1/(.*)/${1:/downcase}/}\",",
-    "    Description = \"${2:Command description}\",",
+      "    Name = \"${1/(.*)/${1:/downcase}/}\",",
+      "    Description = \"${2:Command description}\",",
       "    IsAsync = true)]",
-    "public class ${1:CommandName}Command : AsynchronousCommand",
+      "public class ${1:CommandName}Command : AsynchronousCommand",
       "{",
       "    public ${1}Command(",
       "        CommandExecutionInfo info, ITextOutputProvider outputProvider) : base(info, outputProvider)",
@@ -55,7 +41,6 @@
     ],
     "description": "Creates a new GitHub CLI command class with standard structure"
   },
-  
   "Add Command Argument": {
     "prefix": "cmda",
     "body": [
@@ -66,7 +51,6 @@
     ],
     "description": "Adds a command argument to ArgumentCollection"
   },
-
   "dbc": {
     "prefix": "dbc",
     "body": [
@@ -1268,5 +1252,28 @@
       "}"
     ],
     "description": "This is only used for test cases in the snippet converter tool"
+  },
+  "cosmos db repository": {
+    "prefix": "cosmosrepo",
+    "body": [
+      "public class CosmosDb${1:DbContextClassName}Repository : CosmosOwnedItemRepository<${1:DbContextClassName}>, I${1:DbContextClassName}Repository",
+      "{",
+      "    public CosmosDb${1:DbContextClassName}Repository(",
+      "        IOptions<CosmosRepositoryOptions<${1:DbContextClassName}>> options,",
+      "        CosmosClient client,",
+      "        ILogger<DataAccess.CosmosDb${1:DbContextClassName}Repository> logger) :",
+      "        base(options, client, logger)",
+      "    {",
+      "    }",
+      "",
+      "    $0",
+      "}",
+      "",
+      "public interface I${1:DbContextClassName}Repository : IOwnedItemRepository<${1:DbContextClassName}>",
+      "{",
+      "",
+      "}"
+    ],
+    "description": "Create a Cosmos DB repository class and interface"
   },
 }
